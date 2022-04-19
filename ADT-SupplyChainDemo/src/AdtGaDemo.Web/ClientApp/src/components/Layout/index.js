@@ -15,7 +15,7 @@ import IconHat from "../../assets/Icon-Hat.svg";
 import IconJacket from "../../assets/Icon-Jacket.svg";
 import IconPants from "../../assets/Icon-Pants.svg";
 import IconShoe from "../../assets/Icon-Shoe.svg";
-import ContosoBrand from "../../assets/ContosoBrand.svg";
+import DiamondBigger from "../../assets/DiamondBigger.svg";
 import TeamsNotification from "../../assets/TeamsNotification.svg";
 import { ApiService } from "../../services/apiService";
 
@@ -68,31 +68,31 @@ export const Layout = ({ children, setDemoStage, demoStage, showTopBar = true, d
               window.location.reload();
             }}
             >
-              <Svg src={ContosoBrand} />
+              <Svg src={DiamondBigger} />
             </a>
           </li>
           <li className="is-selected">
             <Link to="/">
               <Svg src={NavIcon1} />
-              <span>World Map</span>
+              <span>Mapa</span>
             </Link>
           </li>
           <li>
             <Link to="/">
               <Svg src={NavIcon2} />
-              <span>Retail Data</span>
+              <span>Varejo</span>
             </Link>
           </li>
           <li>
             <Link to="/">
               <Svg src={NavIcon3} />
-              <span>Shipping Data</span>
+              <span>Dados logísticos</span>
             </Link>
           </li>
           <li>
             <Link to="/">
               <Svg src={NavIcon4} />
-              <span>Financial Reports</span>
+              <span>Relatorios Financeiros</span>
             </Link>
           </li>
           <li>
@@ -111,7 +111,7 @@ export const Layout = ({ children, setDemoStage, demoStage, showTopBar = true, d
       </nav>
       <div className="main-content-area">
         {showTopBar && <div className="top-bar">
-          <div className="label">Filter by Product:</div>
+          <div className="label">Filtrar por produtos:</div>
           <div
             className={`top-bar-item ${topBarItemIsSelected ? "is-selected" : ""}`}
             onClick={() => {
@@ -124,31 +124,31 @@ export const Layout = ({ children, setDemoStage, demoStage, showTopBar = true, d
             <div className="item-image">
               <Svg src={IconTee} />
             </div>
-            <span>Signature Tee</span>
+            <span>Camisetas</span>
           </div>
           <div className="top-bar-item">
             <div className="item-image">
               <Svg src={IconPants} />
             </div>
-            <span>Zespy Pant</span>
+            <span>Calça Zespy</span>
           </div>
           <div className="top-bar-item">
             <div className="item-image">
               <Svg src={IconJacket} />
             </div>
-            <span>Miro Bomber</span>
+            <span>Jaquetas</span>
           </div>
           <div className="top-bar-item">
             <div className="item-image">
               <Svg src={IconShoe} />
             </div>
-            <span>Alt Kicks</span>
+            <span>Calçados</span>
           </div>
           <div className="top-bar-item">
             <div className="item-image">
               <Svg src={IconHat} />
             </div>
-            <span>Fresh Lid</span>
+            <span>Bonés e adereços</span>
           </div>
         </div>}
         <main style={{ maxHeight: showTopBar ? "calc(100vh - 180px)" : "calc(100vh - 40px)" }}>{children}</main>

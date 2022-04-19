@@ -4,15 +4,15 @@
   "parameters": {
     "TeamName": {
       "defaultValue": "Retail on the Edge",
-      "type": "String"
+      "type": "string"
     },
     "TeamChannelName": {
       "defaultValue": "Front Line Workers",
-      "type": "String"
+      "type": "string"
     },
     "CustomerEmail": {
       "defaultValue": "",
-      "type": "String"
+      "type": "string"
     }
   },
   "variables": {
@@ -73,7 +73,7 @@
   },
   "resources": [{
       "type": "Microsoft.ContainerRegistry/registries",
-      "apiVersion": "2019-05-01",
+      "apiVersion": "2017-06-01-preview",
       "name": "[variables('acr').name]",
       "location": "[resourceGroup().location]",
       "sku": {
@@ -130,7 +130,7 @@
     },
     {
       "type": "Microsoft.Sql/servers/databases",
-      "apiVersion": "2017-10-01-preview",
+      "apiVersion": "2017-03-01-preview",
       "name": "[concat(variables('sql').name, '/', variables('sql').db.name)]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
@@ -1385,7 +1385,7 @@
       "dependsOn": [
         "[resourceId('Microsoft.Web/serverfarms', variables('website').serverfarms.name)]"
       ],
-      "tags": null,
+      "tags": {},
       "properties": {
         "name": "[variables('website').name]",
         "enabled": true,
@@ -1478,7 +1478,7 @@
         "name": "MSDeploy",
         "type": "extensions",
         "location": "[resourceGroup().location]",
-        "apiVersion": "2015-08-01",
+        "apiVersion": "2018-02-01",
         "dependsOn": [
           "[concat('Microsoft.Web/sites/', variables('website').name)]"
         ],
@@ -1494,7 +1494,7 @@
     },
     {
       "type": "Microsoft.StreamAnalytics/streamingjobs",
-      "apiVersion": "2017-04-01-preview",
+      "apiVersion": "2016-03-01",
       "name": "[variables('streamingJobs').edgestreamanalytics.name]",
       "location": "[resourceGroup().location]",
       "properties": {
@@ -1507,7 +1507,7 @@
         "eventsOutOfOrderMaxDelayInSeconds": 0,
         "eventsLateArrivalMaxDelayInSeconds": 5,
         "dataLocale": "en-US",
-        "compatibilityLevel": "1.1",
+        "compatibilityLevel": "1.0",
         "transformation": {
           "name": "Transformation",
           "properties": {
